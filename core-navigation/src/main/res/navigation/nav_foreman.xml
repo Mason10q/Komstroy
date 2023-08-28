@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_foreman"
+    app:startDestination="@id/foremenClientsFragment">
+
+    <fragment
+        android:id="@+id/foremenClientsFragment"
+        android:name="com.example.komstroy.photos.ForemenClientsFragment"
+        android:label="ForemenClientsFragment" >
+        <action
+            android:id="@+id/action_foremenClientsFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.komstroy.photos.PhotosFragment"
+        android:label="PhotosFragment" />
+</navigation>

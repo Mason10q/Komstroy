@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/authFragment">
+
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.feature_auth.ui.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            android:id="@+id/action_authFragment_to_chooseNameFragment"
+            app:destination="@id/chooseNameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseNameFragment"
+        android:name="com.example.feature_auth.ui.ChooseNameFragment"
+        android:label="ChooseNameFragment" >
+        <action
+            android:id="@+id/action_chooseNameFragment_to_nav_client"
+            app:destination="@id/nav_client" />
+        <action
+            android:id="@+id/action_chooseNameFragment_to_nav_foreman"
+            app:destination="@id/nav_foreman" />
+        <action
+            android:id="@+id/action_chooseNameFragment_to_nav_worker"
+            app:destination="@id/nav_worker" />
+    </fragment>
+    <include app:graph="@navigation/nav_client" />
+    <include app:graph="@navigation/nav_foreman" />
+    <include app:graph="@navigation/nav_worker" />
+</navigation>

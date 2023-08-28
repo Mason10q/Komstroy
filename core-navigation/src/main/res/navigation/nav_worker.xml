@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_worker"
+    app:startDestination="@id/housesFragment">
+
+    <fragment
+        android:id="@+id/housesFragment"
+        android:name="com.example.komstroy.houses.HousesFragment"
+        android:label="HousesFragment" >
+        <action
+            android:id="@+id/action_housesFragment_to_clientsFragment"
+            app:destination="@id/clientsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/clientsFragment"
+        android:name="com.example.feature_clients.ClientsFragment"
+        android:label="ClientsFragment" >
+        <action
+            android:id="@+id/action_clientsFragment_to_constrFragment2"
+            app:destination="@id/constrFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/constrFragment2"
+        android:name="com.example.feature_construction.ui.ConstrFragment"
+        android:label="ConstrFragment" />
+</navigation>

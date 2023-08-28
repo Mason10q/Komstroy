@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/back_button">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/text_style"
+            android:text="Фото"
+            android:gravity="start|center"
+            android:layout_margin="10dp"
+            android:textSize="24dp"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="50dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/number_style"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/back_red"
+            android:text="5"
+            android:textSize="30sp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

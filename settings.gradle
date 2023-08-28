@@ -1,0 +1,22 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Komstroy"
+include ':app'
+include ':core-android'
+include ':core-navigation'
+include ':feature-auth'
+include ':feature-construction'
+include ':core-network'
+include ':feature-clients'
