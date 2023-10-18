@@ -15,7 +15,8 @@ ext.vers = [
         viewModels            : "1.5.7",
         rxjava                : "3.0.2",
         circleImage           : "3.0.1",
-        picasso               : "2.8"
+        picasso               : "2.8",
+        delegate_adapter      : "4.2"
 ]
 
 
@@ -43,7 +44,9 @@ ext.lib = [
 
         circleImage               : "de.hdodenhof:circleimageview:$vers.circleImage",
 
-        picasso                   : "com.squareup.picasso:picasso:$vers.picasso"
+        picasso                   : "com.squareup.picasso:picasso:$vers.picasso",
+
+        delegate_adapter          : "io.github.d00mch:delegateadapter:$vers.delegate_adapter"
 ]
 
 ext.libs = [

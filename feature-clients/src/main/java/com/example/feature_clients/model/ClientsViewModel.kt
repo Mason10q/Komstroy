@@ -1,4 +1,4 @@
-package com.example.feature_clients
+package com.example.feature_clients.model
 
 import com.example.core_android.viewModel.BaseListViewModel
 import com.example.feature_clients.entities.Client

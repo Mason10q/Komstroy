@@ -6,14 +6,6 @@
 
     <fragment
         android:id="@+id/foremenClientsFragment"
-        android:name="com.example.komstroy.photos.ForemenClientsFragment"
-        android:label="ForemenClientsFragment" >
-        <action
-            android:id="@+id/action_foremenClientsFragment_to_photosFragment"
-            app:destination="@id/photosFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/photosFragment"
-        android:name="com.example.komstroy.photos.PhotosFragment"
-        android:label="PhotosFragment" />
+        android:name="com.example.feature_clients.ui.ForemenClientsFragment"
+        android:label="ForemenClientsFragment" />
 </navigation>

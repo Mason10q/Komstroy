@@ -10,12 +10,12 @@
         android:label="HousesFragment" >
         <action
             android:id="@+id/action_housesFragment_to_clientsFragment"
-            app:destination="@id/clientsFragment" />
+            app:destination="@id/houseClientsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/clientsFragment"
-        android:name="com.example.feature_clients.ClientsFragment"
-        android:label="ClientsFragment" >
+        android:id="@+id/houseClientsFragment"
+        android:name="com.example.feature_clients.ui.HouseClientsFragment"
+        android:label="HouseClientsFragment" >
         <action
             android:id="@+id/action_clientsFragment_to_constrFragment2"
             app:destination="@id/constrFragment2" />

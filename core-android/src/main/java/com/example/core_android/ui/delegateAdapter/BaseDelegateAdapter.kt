@@ -13,11 +13,19 @@ abstract class BaseDelegateAdapter<T: Any, VB: ViewBinding>(
     open fun VB.onRecycled() {}
     open fun VB.onAttachedToWindow() {}
     open fun VB.onDetachedFromWindow() {}
-    abstract fun VB.onBind(item: T)
+    abstract fun VB.onBind(item: T, position: Int)
 
     abstract fun T.getItemId(): Any
 
     abstract fun isForViewType(item: Any): Boolean
+
+    private var listener: (position: Int) -> Unit = {}
+
+    fun setOnViewClicked(listener: (position: Int) -> Unit){
+        this.listener = listener
+    }
+
+    fun onViewClicked(position: Int) = this.listener(position)
 
     final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -31,7 +39,7 @@ abstract class BaseDelegateAdapter<T: Any, VB: ViewBinding>(
         holder: RecyclerView.ViewHolder,
         items: List<Any>,
         position: Int
-    ) = (holder as ViewBindingHolder<VB>).viewBinding.onBind(items[position] as T)
+    ) = (holder as ViewBindingHolder<VB>).viewBinding.onBind(items[position] as T, position)
 
 
     @Suppress("UNCHECKED_CAST")

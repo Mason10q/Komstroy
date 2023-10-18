@@ -40,9 +40,11 @@ android {
 dependencies {
     implementation project(":core-network")
     implementation project(":core-navigation")
+    implementation project(":core-android")
     implementation project(":feature-auth")
     implementation project(":feature-construction")
-    implementation project(":core-android")
+    implementation project(":feature-clients")
+    implementation project(":feature-photos")
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'

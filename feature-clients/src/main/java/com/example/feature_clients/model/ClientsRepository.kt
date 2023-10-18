@@ -1,4 +1,4 @@
-package com.example.feature_clients
+package com.example.feature_clients.model
 
 import com.example.core_android.Mapper
 import com.example.core_network.api.clients.ClientsApi

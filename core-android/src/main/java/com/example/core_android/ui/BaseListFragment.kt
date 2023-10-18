@@ -30,10 +30,11 @@ abstract class BaseListFragment<
 
     protected val binding: FB by lazy { inflater(layoutInflater) }
 
-    protected abstract fun getData()
-
     protected abstract val adapter: A
 
+    protected abstract fun getData()
+
+    protected abstract fun onViewClicked(view: View, item: DATA)
     protected open fun inject() {}
 
     override fun onAttach(context: Context) {
@@ -54,6 +55,8 @@ abstract class BaseListFragment<
         viewModel.error.observe(viewLifecycleOwner) { msg ->
             Toast.makeText(requireContext(), msg, Toast.LENGTH_LONG).show()
         }
+
+        adapter.setOnViewClicked(::onViewClicked)
 
         getData()
 

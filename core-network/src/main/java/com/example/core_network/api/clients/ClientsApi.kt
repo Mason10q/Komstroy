@@ -18,7 +18,7 @@ interface ClientsApi {
 
     @GET("/foremenClients")
     fun getForemenClients(
-        @Query(value = "foremen_name") name: String
+        @Query(value = "foremen_id") foremenId: Int
     ): Single<List<ClientCounterDto>>
 
 }

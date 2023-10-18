@@ -1,6 +1,11 @@
-package com.example.feature_photos
+package com.example.feature_photos.model
 
-import com.example.core_network.api.photos.PhotosApi
+import com.example.core_android.Mapper
+import com.example.core_network.api.gallery.GalleryApi
+import com.example.core_network.api.gallery.dtos.PhotoDto
+import com.example.core_network.api.gallery.dtos.VideoDto
+import com.example.feature_photos.entities.Photo
+import com.example.feature_photos.entities.Video
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -13,7 +18,9 @@ import java.io.File
 import javax.inject.Inject
 
 class PhotosRepository @Inject constructor(
-    private val api: PhotosApi
+    private val api: GalleryApi,
+    private val photoMapper: Mapper<PhotoDto, Photo>,
+    private val videoMapper: Mapper<VideoDto, Video>
 ) {
 
     fun uploadFile(file: File, type: String, constructionId: Int): Single<Response<ResponseBody>> {
@@ -25,8 +32,19 @@ class PhotosRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    fun getFiles(constructionId: Int) = api.getPhotos(constructionId)
+    private fun getPhotos(constructionId: Int) = api.getPhotos(constructionId)
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
+        .map(photoMapper::map)
 
+    private fun getVideos(constructionId: Int) = api.getVideos(constructionId)
+        .subscribeOn(Schedulers.io())
+        .observeOn(AndroidSchedulers.mainThread())
+        .map(videoMapper::map)
+
+
+    fun getFiles(constructionId: Int) = Single.zip(
+        getVideos(constructionId),
+        getPhotos(constructionId)
+    ){ p, v -> p + v }
 }

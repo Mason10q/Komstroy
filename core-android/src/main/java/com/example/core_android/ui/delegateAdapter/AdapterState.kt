@@ -1,5 +1,7 @@
 package com.example.core_android.ui.delegateAdapter
 
+import java.io.Serializable
+
 data class AdaptersState(
     private val adapters: List<DelegateAdapter>,
     val data: List<Any> = emptyList()

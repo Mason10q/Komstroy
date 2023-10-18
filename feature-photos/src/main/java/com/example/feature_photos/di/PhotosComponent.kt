@@ -1,15 +1,17 @@
-package com.example.feature_photos
+package com.example.feature_photos.di
 
 import com.example.core_android.di.AndroidModule
+import com.example.feature_photos.ui.FullScreenFragment
+import com.example.feature_photos.ui.GalleryFragment
 import dagger.Component
-import dagger.Component.Builder
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [PhotosModule::class, AndroidModule::class])
+@Component(modules = [PhotosModule::class, GalleryModule::class, AndroidModule::class])
 interface PhotosComponent {
 
-    fun inject(fragment: PhotosFragment)
+    fun inject(fragment: GalleryFragment)
+    fun inject(fragment: FullScreenFragment)
 
     @Component.Builder
     interface Builder{

@@ -11,13 +11,14 @@ import com.example.komstroy.R
 import com.example.core_navigation.R as navR
 import com.example.core_android.di.AndroidModule
 import com.example.core_android.houseIdKey
+import com.example.core_android.ui.BaseListFragment
 import com.example.komstroy.databinding.FragmentHousesBinding
 import com.example.komstroy.databinding.ItemHouseBinding
 import com.example.komstroy.entities.House
 import javax.inject.Inject
 
 class HousesFragment :
-    com.example.core_android.ui.BaseListFragment<House, ItemHouseBinding, HousesAdapter, HousesViewModel, FragmentHousesBinding>(
+    BaseListFragment<House, ItemHouseBinding, HousesAdapter, HousesViewModel, FragmentHousesBinding>(
         HousesViewModel::class.java,
         FragmentHousesBinding::inflate
     ) {
@@ -26,6 +27,10 @@ class HousesFragment :
 
     override fun getData() {
         viewModel.getHouses()
+    }
+
+    override fun onViewClicked(view: View, item: House) {
+        findNavController().navigate(navR.id.houseClientsFragment, bundleOf(houseIdKey to item.id))
     }
 
     override fun inject() = DaggerMainComponent
@@ -41,10 +46,6 @@ class HousesFragment :
         savedInstanceState: Bundle?
     ): View? {
         binding.recycler.adapter = adapter
-
-        adapter.setOnViewClicked{ _, item ->
-            findNavController().navigate(navR.id.clientsFragment, bundleOf(houseIdKey to item.id))
-        }
 
         return super.onCreateView(inflater, container, savedInstanceState)
     }

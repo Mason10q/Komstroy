@@ -14,6 +14,7 @@ open class CompositeDelegateAdapter(
     protected open var adapterState = AdaptersState(adapters.toList())
     private var updateCallback: ListUpdateCallback? = null
 
+    fun getData() = adapterState.data
     fun setListUpdateCallback(callback: ListUpdateCallback) {
         updateCallback = callback
     }

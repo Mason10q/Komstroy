@@ -1,4 +1,4 @@
-package com.example.feature_construction
+package com.example.feature_construction.model
 
 import com.example.core_network.api.construction.ConstructionApi
 import com.example.feature_construction.mappers.ConstrMapper

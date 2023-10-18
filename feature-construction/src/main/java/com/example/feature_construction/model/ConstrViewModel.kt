@@ -1,4 +1,4 @@
-package com.example.feature_construction
+package com.example.feature_construction.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -11,7 +11,7 @@ class ConstrMapper @Inject constructor():
 
     override fun map(item: ConstructionDto): Construction =
         Construction(
-            Foremen(item.foremenId, item.foremenName, item.foremenPhone, item.messengerName, item.foremenTelegramTag),
+            Foremen(item.foremenId, item.foremenName, item.foremenPhone, item.foremenTelegramTag, item.messengerName),
             item.stateName,
             item.address,
             item.startDate

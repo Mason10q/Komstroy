@@ -1,3 +1,3 @@
-package com.example.core_android
+package com.example.feature_photos.entities
 
 open class File(val dateTime: String)

@@ -27,7 +27,34 @@
             android:id="@+id/action_chooseNameFragment_to_nav_worker"
             app:destination="@id/nav_worker" />
     </fragment>
-    <include app:graph="@navigation/nav_client" />
-    <include app:graph="@navigation/nav_foreman" />
+
+
+    <include app:graph="@navigation/nav_client">
+        <action
+            android:id="@+id/action_nav_client_to_galleryFragment"
+            app:destination="@id/galleryFragment"/>
+    </include>
+
+    <include app:graph="@navigation/nav_foreman">
+        <action
+            android:id="@+id/action_nav_foremen_to_galleryFragment"
+            app:destination="@id/galleryFragment"/>
+    </include>
+
     <include app:graph="@navigation/nav_worker" />
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.example.feature_photos.ui.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/action_galleryFragment_to_fullScreenFragment"
+            app:destination="@id/fullScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullScreenFragment"
+        android:name="com.example.feature_photos.ui.FullScreenFragment"
+        android:label="FullScreenFragment" />
+
 </navigation>

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.core_android.ui.BaseAdapter
 import com.example.core_android.ui.BaseListFragment
-import com.example.feature_clients.ClientsViewModel
+import com.example.feature_clients.model.ClientsViewModel
 import com.example.feature_clients.databinding.FragmentClientsBinding
 import com.example.feature_clients.databinding.ItemClientBinding
 import com.example.feature_clients.di.DaggerClientsComponent
@@ -44,9 +44,9 @@ class ClientsAdapter: BaseAdapter<Client, ItemClientBinding>(ItemClientBinding::
     override fun bindViews(binding: ItemClientBinding, item: Client, position: Int) {
         with(binding) {
             name.text = item.name
-            newsCount.text = item.newsCounter.toString()
-            photoCount.text = item.photoCounter.toString()
-            taskCount.text = item.taskCounter.toString()
+            newsCount.text = item.counter.newsCounter.toString()
+            photoCount.text = item.counter.photoCounter.toString()
+            taskCount.text = item.counter.taskCounter.toString()
         }
     }
 

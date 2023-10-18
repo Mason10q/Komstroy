@@ -15,7 +15,7 @@ import com.example.core_android.constructionIdKey
 import com.example.core_android.foremenIdKey
 import com.example.core_android.roleKey
 import com.example.core_android.viewModel.ViewModelFactory
-import com.example.feature_auth.ChooseNameViewModel
+import com.example.feature_auth.model.ChooseNameViewModel
 import com.example.feature_auth.databinding.FragmentChooseNameBinding
 import com.example.feature_auth.di.DaggerAuthComponent
 import javax.inject.Inject
@@ -43,7 +43,7 @@ class ChooseNameFragment : Fragment() {
         }
     }
 
-    fun prepareObservers() {
+    private fun prepareObservers() {
 
         with(viewModel) {
             clients.observe(viewLifecycleOwner) { clients ->

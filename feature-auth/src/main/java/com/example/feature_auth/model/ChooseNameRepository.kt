@@ -1,4 +1,4 @@
-package com.example.feature_auth
+package com.example.feature_auth.model
 
 import com.example.core_network.api.AuthApi
 import com.example.feature_auth.mappers.ClientsMapper
